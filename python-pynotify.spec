@@ -4,7 +4,7 @@ Name:		python-pynotify
 Version:	0.1.1
 Release:	1
 License:	GPL
-Group:		Libraries
+Group:		Libraries/Python
 Source0:	http://galago-project.org/files/releases/source/notify-python/notify-python-%{version}.tar.gz
 # Source0-md5:	8f0ef0939cc8edd2efd896ce5ba80cf4
 BuildRequires:	python-devel >= 1:2.5
