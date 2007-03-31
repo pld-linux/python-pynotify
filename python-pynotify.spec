@@ -1,4 +1,5 @@
 Summary:	Python bindings for libnotify
+Summary(pl.UTF-8):	Wiązania Pythona do libnotify
 Name:		python-pynotify
 Version:	0.1.1
 Release:	1
@@ -8,12 +9,16 @@ Source0:	http://galago-project.org/files/releases/source/notify-python/notify-py
 # Source0-md5:	8f0ef0939cc8edd2efd896ce5ba80cf4
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-pygtk-devel
+BuildRequires:	rpm-pythonprov
 Requires:	libnotify
 %pyrequires_eq	python-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Python bindings for libnotify
+Python bindings for libnotify.
+
+%description -l pl.UTF-8
+Wiązania Pythona do libnotify.
 
 %prep
 %setup -q -n notify-python-%{version}
