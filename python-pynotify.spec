@@ -7,11 +7,13 @@ License:	GPL
 Group:		Libraries/Python
 Source0:	http://galago-project.org/files/releases/source/notify-python/notify-python-%{version}.tar.gz
 # Source0-md5:	8f0ef0939cc8edd2efd896ce5ba80cf4
-BuildRequires:	libnotify-devel
+BuildRequires:	libnotify-devel >= 0.4.3
+BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5
-BuildRequires:	python-pygtk-devel
+BuildRequires:	python-pygtk-devel >= 2:2.4.0
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
+Requires:	libnotify >= 0.4.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,19 +26,15 @@ Wiązania Pythona do libnotify.
 %setup -q -n notify-python-%{version}
 
 %build
-%{configure}
+%configure
 %{__make} \
-	PYTHON="%{__python}" \
-	PYTHONINCLUDE="%{py_incdir}" \
-	CC="%{__cc}" \
-	RPM_OPT_FLAGS="%{rpmcflags}"
+	PYTHON="%{__python}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	PYTHON="%{__python}" \
-	PYTHONLIBDIR="%{py_sitedir}" \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
