@@ -7,10 +7,10 @@ License:	GPL
 Group:		Libraries/Python
 Source0:	http://galago-project.org/files/releases/source/notify-python/notify-python-%{version}.tar.gz
 # Source0-md5:	8f0ef0939cc8edd2efd896ce5ba80cf4
+BuildRequires:	libnotify-devel
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-pygtk-devel
 BuildRequires:	rpm-pythonprov
-Requires:	libnotify
 %pyrequires_eq	python-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
