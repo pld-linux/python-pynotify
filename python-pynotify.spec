@@ -46,3 +46,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py_sitedir}/gtk-2.0/pynotify
 %{py_sitedir}/gtk-2.0/pynotify/*.py*
 %attr(755,root,root) %{py_sitedir}/gtk-2.0/pynotify/*.so
+%{_datadir}/pygtk/2.0/defs/*
+%{_pkgconfigdir}/*
