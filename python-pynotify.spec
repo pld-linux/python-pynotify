@@ -2,7 +2,7 @@ Summary:	Python bindings for libnotify
 Summary(pl.UTF-8):	Wiązania Pythona do libnotify
 Name:		python-pynotify
 Version:	0.1.1
-Release:	7
+Release:	8
 License:	LGPL v2.1
 Group:		Libraries/Python
 Source0:	http://galago-project.org/files/releases/source/notify-python/notify-python-%{version}.tar.gz
