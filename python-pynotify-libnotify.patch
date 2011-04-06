@@ -1,0 +1,15 @@
+--- notify-python-0.1.1/src/pynotify.c~	2006-10-08 19:59:03.000000000 +0200
++++ notify-python-0.1.1/src/pynotify.c	2011-04-06 18:22:43.547253294 +0200
+@@ -177,7 +177,11 @@
+         PyErr_SetString(PyExc_TypeError, "attach should be a GtkWidget or None");
+         return -1;
+     }
+-    self->obj = (GObject *)notify_notification_new(summary, message, icon, attach);
++    self->obj = (GObject *)notify_notification_new(summary, message, icon
++#if !defined(NOTIFY_VERSION_MINOR) || (NOTIFY_VERSION_MAJOR == 0 && NOTIFY_VERSION_MINOR < 7)
++		, attach
++#endif
++		);
+ 
+     if (!self->obj) {
+         PyErr_SetString(PyExc_RuntimeError, "could not create NotifyNotification object");
